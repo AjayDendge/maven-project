@@ -44,8 +44,7 @@ stage("Compile code")
   {
    steps
     {
-     sshagent(['deploytomcat']) {
-     sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@52.66.202.129:/var/lib/tomcat/webapps' 
+   deploy adapters: [tomcat7(credentialsId: '957e2f5e-80e6-48a9-803e-3481ebb2f0f7', path: '', url: 'http://52.66.202.129:8080/')], contextPath: null, war: '**/*.war'
     }
     }
   }
