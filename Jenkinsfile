@@ -7,7 +7,7 @@ stage("SCM")
 {
 steps
 {
-sh 'echo Hello Team'
+git branch: 'master', url: 'https://github.com/AjayDendge/maven-project.git'
 }
 }
 }
