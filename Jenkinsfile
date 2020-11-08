@@ -19,5 +19,14 @@ stage("Compile code")
     }
     }
   }
+  stage("job Build")
+  {
+   steps
+    {
+      withMaven(jdk: 'java', maven: 'maven') {
+     sh 'mvn package'
+    }
+    }
+  }
 }
 }
