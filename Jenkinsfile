@@ -39,5 +39,17 @@ stage("Compile code")
     }
     }
   }
+
+ stage("Deploy on war file on tomact/dev")
+  {
+   steps
+    {
+     sshagent(['deploytomcat']) {
+     sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@52.66.202.129:/var/lib/tomcat/webapps' 
+    }
+    }
+  }
+
+
 }
 }
