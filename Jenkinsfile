@@ -35,7 +35,7 @@ stage("Compile code")
    steps
     {
       withMaven(jdk: 'java', maven: 'maven') {
-     sh 'mvn clean package'
+     sh 'mvn package'
     }
     }
   }
