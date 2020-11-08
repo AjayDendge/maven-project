@@ -45,7 +45,7 @@ stage("Compile code")
    steps
     {
    deploy adapters: [tomcat7(credentialsId: '957e2f5e-80e6-48a9-803e-3481ebb2f0f7', path: '', url: 'http://52.66.202.129:8080/')], contextPath: null, war: '**/*.war'
-    }
+    
     }
   }
 
