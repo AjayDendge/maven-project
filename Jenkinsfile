@@ -45,7 +45,8 @@ stage("Compile code")
    steps
     {
      sshagent(['deploytomcat']) {
-     sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@52.66.202.129:/var/lib/tomcat/webapps' 
+     sh 'sudo chmod 777 /var/lib/tomcat/webapps'
+     sh 'sudo scp -o StrictHostKeyChecking=no */target/*.war ec2-user@52.66.202.129:/var/lib/tomcat/webapps' 
     }
     }
   }
