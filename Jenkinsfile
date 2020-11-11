@@ -15,7 +15,7 @@ stage("SCM")
   {
    steps
     {
-   withSonarQubeEnv('sonarqube') 
+   withSonarQubeEnv('sonarqube1') 
        {
       withMaven(jdk: 'java', maven: 'maven')
          {
