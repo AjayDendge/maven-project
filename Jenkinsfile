@@ -32,11 +32,11 @@ stage("Compile code")
   
 
 
- stage("Deploy on war file on tomact/dev")
+ stage("maven pacage with sonarqube ")
   {
    steps
     {
-   withSonarQubeEnv(credentialsId: 'sonarqube') 
+   withSonarQubeEnv('sonarqube') 
        {
       withMaven(jdk: 'java', maven: 'maven')
          {
