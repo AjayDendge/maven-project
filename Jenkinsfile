@@ -10,27 +10,6 @@ stage("SCM")
   git branch: 'master', url: 'https://github.com/AjayDendge/maven-project.git'
   }
   }
-stage("Compile code")
-  {
-   steps
-    {
-      withMaven(jdk: 'java', maven: 'maven') {
-     sh 'mvn compile'
-    }
-    }
-  }
-  
-  stage("test code")
-  {
-   steps
-    {
-      withMaven(jdk: 'java', maven: 'maven') {
-     sh 'mvn test'
-    }
-    }
-  }
-  
-
 
  stage("maven pacage with sonarqube ")
   {
@@ -40,7 +19,7 @@ stage("Compile code")
        {
       withMaven(jdk: 'java', maven: 'maven')
          {
-     sh 'mvn package'
+     sh 'sonar:sonar package'
          }
        }
    }
