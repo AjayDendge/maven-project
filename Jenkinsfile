@@ -19,7 +19,7 @@ stage("SCM")
        {
       withMaven(jdk: 'java', maven: 'maven')
          {
-     sh 'sonar:sonar package'
+  sh 'mvn clean package sonar:sonar'
          }
        }
    }
