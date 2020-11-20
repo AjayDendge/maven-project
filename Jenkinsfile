@@ -27,6 +27,13 @@ stage("SCM")
     sh  'docker build -t ajaydendge/ci-cd .'
     }
   }
+  
+    stage("docker image push")
+  {
+    steps{
+    sh  'docker push ajaydendge/ci-cd'
+    }
+  }
     
     }
   }
