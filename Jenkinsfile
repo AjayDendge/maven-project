@@ -32,7 +32,7 @@ stage("SCM")
   {
      steps{
     withCredentials([usernameColonPassword(credentialsId: 'dockerhub', variable: 'dockerhub')]) { 
-   sh'docker push ajaydendge/ci-cd:02'
+   sh 'sudo docker push ajaydendge/ci-cd:02'
     }
   }
   }
