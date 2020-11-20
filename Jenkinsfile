@@ -19,7 +19,14 @@ stage("SCM")
          }
        }
    }
+ 
   
+  stage("docker build image")
+  {
+    steps{
+    sh  'docker build -t ajaydendge/ci-cd .'
+    }
+  }
     
     }
   }
