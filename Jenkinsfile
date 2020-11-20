@@ -11,19 +11,16 @@ stage("SCM")
   }
   }
 
- stage("maven pacage with sonarqube ")
+ stage("maven pakage ")
   {
-   steps
-    {
-   withSonarQubeEnv('sonar') 
-       {
+    steps{
       withMaven(jdk: 'java', maven: 'maven')
          {
   sh 'mvn clean package sonar:sonar'
          }
        }
    }
-  }
+  
     
     }
   }
