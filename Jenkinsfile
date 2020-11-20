@@ -15,7 +15,7 @@ stage("SCM")
   {
     steps{
           withMaven(jdk: 'Java', maven: 'maven') {
-  sh 'mvn clean package sonar:sonar'
+  sh 'mvn package'
          }
        }
    }
