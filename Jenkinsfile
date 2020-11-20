@@ -24,7 +24,7 @@ stage("SCM")
   stage("docker build image")
   {
     steps{
-    sh  'docker build -t ajaydendge/ci-cd .'
+    sh 'docker build -t ajaydendge/ci-cd:01 .'
     }
   }
   
@@ -32,7 +32,7 @@ stage("SCM")
   {
      steps{
     withCredentials([usernameColonPassword(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
-   sh  'docker push ajaydendge/ci-cd'
+   sh'docker push ajaydendge/ci-cd:01'
     }
   }
   }
