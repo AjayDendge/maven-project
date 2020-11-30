@@ -24,14 +24,14 @@ stage("SCM")
   stage("docker build image")
   {
     steps{
-    sh 'docker build -t ajaydendge/newimage:01 .'
+    sh 'docker build -t ajaydendge/newimage:02 .'
     }
   }
   
   stage('Push Docker Image') {
     steps{
-withCredentials([usernameColonPassword(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
-     sh 'docker push ajaydendge/newimage:01'
+     sh 'docker login -u "ajaydendge" -p "Ajay@9696" docker.io'
+     sh 'docker push ajaydendge/newimage:02'
        }
     }}
     
