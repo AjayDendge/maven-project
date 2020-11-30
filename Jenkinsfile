@@ -33,7 +33,7 @@ stage("SCM")
      sh 'docker login -u "ajaydendge" -p "Ajay@9696" docker.io'
      sh 'docker push ajaydendge/newimage:02'
        }
-    }}
+    }
     
     }
   }
