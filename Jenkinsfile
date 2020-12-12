@@ -30,9 +30,9 @@ stage("SCM")
   
   stage('Push Docker Image') {
     steps{
- withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '5f989864-2e73-47af-a5d2-fcb694181742', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-   sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 112631035129.dkr.ecr.ap-south-1.amazonaws.com'
- }}}
+withDockerRegistry(credentialsId: 'ecr:ap-south-1:5f989864-2e73-47af-a5d2-fcb694181742', url: '112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge') {
+   sh 'docker push 112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge/newimage:03'
+}}}
     
     }
   }
