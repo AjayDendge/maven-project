@@ -30,7 +30,7 @@ stage("SCM")
   
   stage('Push Docker Image') {
     steps{
-withDockerRegistry(credentialsId: 'ecr:ap-south-1:5f989864-2e73-47af-a5d2-fcb694181742', url: '112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge') {
+withDockerRegistry(credentialsId: 'ecr:ap-south-1:5f989864-2e73-47af-a5d2-fcb694181742', url: 'https://112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge') {
    sh 'docker push 112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge/newimage:03'
 }}}
     
