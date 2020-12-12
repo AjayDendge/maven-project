@@ -24,14 +24,15 @@ stage("SCM")
   stage("docker build image")
   {
     steps{
-    sh 'docker build -t ajaydendge:03 .'
+    sh 'docker build -t ajaydendge:01 .'
     }
   }
   
   stage('Push Docker Image') {
     steps{
 withDockerRegistry(credentialsId: 'ecr:ap-south-1:5f989864-2e73-47af-a5d2-fcb694181742', url: 'https://112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge') {
-   sh 'docker push ajaydendge:03'
+   sh 'docker tag ajaydendge:01 112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge:01'
+   sh 'docker push ajaydendge:01'
 }}}
     
     }
