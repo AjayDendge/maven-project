@@ -32,7 +32,7 @@ stage("SCM")
     steps{
 withDockerRegistry(credentialsId: 'ecr:ap-south-1:5f989864-2e73-47af-a5d2-fcb694181742', url: 'https://112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge') {
    sh 'docker tag ajaydendge:01 112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge:01'
-   sh 'docker push ajaydendge:01'
+   sh 'docker push 112631035129.dkr.ecr.ap-south-1.amazonaws.com/ajaydendge:01'
 }}}
     
     }
