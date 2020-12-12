@@ -30,9 +30,9 @@ stage("SCM")
   
   stage('Push Docker Image') {
     steps{
-    withCredentials([usernamePassword(credentialsId: 'hub123', passwordVariable: '', usernameVariable: '')]) {
-     sh 'docker push ajaydendge/newimage:03'
-       }
+ 
+     sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 112631035129.dkr.ecr.ap-south-1.amazonaws.com'
+      
     }}
     
     }
